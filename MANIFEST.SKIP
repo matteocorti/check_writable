@@ -13,3 +13,5 @@
 ^.#
 ^#
 ^check_writable-
+\.travis\.yml
+\.git
