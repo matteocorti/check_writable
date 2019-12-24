@@ -28,8 +28,6 @@ requires 'version'                       => 0;
 
 install_script  'check_writable';
 
-auto_install;
-
 WriteMakefile(
     INSTALLSCRIPT        => '/usr/lib/nagios/plugins/contrib',
     INSTALLBIN           => '/usr/lib/nagios/plugins/contrib',
