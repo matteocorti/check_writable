@@ -4,6 +4,7 @@ check_writable
 check_writable.pod
 check_writable.spec
 COPYING
+COPYRIGHT
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Include.pm
