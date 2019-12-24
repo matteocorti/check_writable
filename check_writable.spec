@@ -52,6 +52,21 @@ It return a critical status if one of the tests fails
 make %{?_smp_mflags}
 
 %install
+rm -rf %{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot}
+find %{buildroot} -type f -name .packlist -exec rm -f {} \;
+find %{buildroot} -type f -name "*.pod" -exec rm -f {} \;
+find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null \;
+%{_fixperms} %{buildroot}/*
+
+%clean
+rm -rf %{buildroot}
+
+%files
+%defattr(-,root,root,-)
+%doc AUTHORS Changes NEWS README TODO COPYING COPYRIGHT
+%{nagiospluginsdir}/%{sourcename}
+%{_mandir}/man1/%{sourcename}.1*
 
 %changelog
 * Tue Dec 24 2019 Matteo Corit <matteo@corti.li> - 2.0.1
