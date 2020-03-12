@@ -1,4 +1,5 @@
 # Load the Module::Install bundled in ./inc/
+use lib '.'; # added since from Perl 5.26 '.' is no more in @INC
 use inc::Module::Install;
 
 ##############################################################################
@@ -31,4 +32,6 @@ WriteMakefile(
     INSTALLSCRIPT        => '/usr/lib/nagios/plugins/contrib',
     INSTALLBIN           => '/usr/lib/nagios/plugins/contrib',
     INSTALLSITESCRIPT    => '/usr/lib/nagios/plugins/contrib',
+    MAN1PODS             => { 'check_writable.pod' => 'blib/man1/check_writable.1', },
+    MAN3PODS             => { },    
 );
