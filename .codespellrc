@@ -1,0 +1,5 @@
+[codespell]
+check-filenames =
+check-hidden =
+skip = ./check_writable-*,.git,blib,inc,Makefile
+ignore-words = .codespell-ignore
